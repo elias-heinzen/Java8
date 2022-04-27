@@ -13,14 +13,10 @@ public class OrdenaStrings {
         palavras.add("caelum");
 
         Comparator<String> comparador = new ComparadorPorTamanho();
-//        Collections.sort(palavras, comparador);
+
         palavras.sort(comparador);
 
         System.out.println(palavras);
-
-//        for (String p : palavras) {
-//            System.out.println(p);
-//        }
 
         Consumer<String> consumidor = new ImprimeNaLinha();
         palavras.forEach(consumidor);
