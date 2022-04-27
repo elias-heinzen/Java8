@@ -33,7 +33,8 @@ public class ExemploCursos {
 
         cursos.stream()
                 .filter(c -> c.getAlunos() >= 100)
-                .forEach(c -> System.out.println(c.getNome()));
+                .map(Curso::getAlunos)
+                .forEach(System.out::println);
 
     }
 }
