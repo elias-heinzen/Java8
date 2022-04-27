@@ -18,15 +18,9 @@ public class OrdenaStrings {
 
         System.out.println(palavras);
 
-        Consumer<String> consumidor = new ImprimeNaLinha();
-        palavras.forEach(consumidor);
-    }
-}
-
-class ImprimeNaLinha implements Consumer<String> {
-    @Override
-    public void accept(String s) {
-        System.out.println(s);
+        palavras.forEach((String s) -> {
+            System.out.println(s);
+        });
     }
 }
 
