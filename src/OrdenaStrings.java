@@ -18,9 +18,7 @@ public class OrdenaStrings {
 
         System.out.println(palavras);
 
-        palavras.forEach((String s) -> {
-            System.out.println(s);
-        });
+        palavras.forEach(s -> System.out.println(s));
     }
 }
 
