@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.OptionalDouble;
+import java.util.stream.Collectors;
 
 class Curso {
     private String nome;
@@ -39,9 +40,16 @@ public class ExemploCursos {
 
 //        System.out.println(sum);
 
-        cursos.stream()
+//        cursos.stream()
+//                .filter(c -> c.getAlunos() >= 100)
+//                .findAny()
+//                .ifPresent(c -> System.out.println(c.getNome()));
+
+        cursos = cursos.stream()
                 .filter(c -> c.getAlunos() >= 100)
-                .findAny()
-                .ifPresent(c -> System.out.println(c.getNome()));
+                .collect(Collectors.toList());
+
+        cursos.stream()
+                .forEach(c -> System.out.println(c.getNome()));
     }
 }
