@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
 import java.util.OptionalDouble;
 import java.util.stream.Collectors;
 
@@ -45,11 +46,12 @@ public class ExemploCursos {
 //                .findAny()
 //                .ifPresent(c -> System.out.println(c.getNome()));
 
-        cursos = cursos.stream()
+        Map<String, Integer> map = cursos.stream()
                 .filter(c -> c.getAlunos() >= 100)
-                .collect(Collectors.toList());
+                .collect(Collectors.toMap(
+                        c -> c.getNome(),
+                        c -> c.getAlunos()));
 
-        cursos.stream()
-                .forEach(c -> System.out.println(c.getNome()));
+        System.out.println(map);
     }
 }
