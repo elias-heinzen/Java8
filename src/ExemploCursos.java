@@ -36,11 +36,9 @@ public class ExemploCursos {
 
         System.out.println(sum);
 
-        Optional<Curso> optionalCurso = cursos.stream()
+        cursos.stream()
                 .filter(c -> c.getAlunos() >= 100)
-                .findAny();
-
-        Curso curso = optionalCurso.orElse(null);
-        System.out.println(curso.getNome());
+                .findAny()
+                .ifPresent(c -> System.out.println(c.getNome()));
     }
 }
